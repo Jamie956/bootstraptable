@@ -1,14 +1,12 @@
-{
-    "data": [
-        {
-            "id": 1,
-            "name": "name1",
-            "price": "price1"
-        },
-        {
-            "id": 2,
-            "name": "name2",
-            "price": "price2"
-        }
-    ]
-}
+[
+    {
+        "id": 0,
+        "name": "Item 0",
+        "price": "$0"
+    },
+    {
+        "id": 1,
+        "name": "Item 1",
+        "price": "$1"
+    }
+]
