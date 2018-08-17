@@ -1,13 +1,12 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.js"></script>
 
 <div class="container">
-    <table id="table" data-sort-name="id" data-sort-order="desc"></table>
+    <table id="table"></table>
 </div>
 
 <script>
@@ -20,26 +19,29 @@
         id: 2,
         name: 'Item 2',
         price: '$2'
-    }, {
-        id: 4,
-        name: 'Item 4',
-        price: '$4'
-    }, {
-        id: 3,
-        name: 'Item 3',
-        price: '$3'
     }];
     var columns = [{
+        field: 'state',
+        title: 'State',
+        checkbox: true,
+        formatter: function (value, row, index) {
+            if (index === 1) {
+                return {
+                    disabled: true,
+                    checked: true
+                }
+            }
+            return value;
+        }
+    }, {
         field: 'id',
-        title: 'Item ID',
-        sortable: 'true'
+        title: 'Item ID'
     }, {
         field: 'name',
         title: 'Item Name'
     }, {
         field: 'price',
-        title: 'Item Price',
-        sortable: 'true'
+        title: 'Item Price'
     }]
     $table.bootstrapTable({
         columns: columns,
