@@ -18,6 +18,7 @@ search: "true",//是否支持搜索
 pageList: "[5, 10, 20, 50, 100, 200]",//页面数据条数
 url:"/examples/bootstrap_table/data",//请求数据
 sidePagination: "server",//server or client 分页
+onClickRow: function (row) {}　//单机一行的回调函数
 ```
 
 ### columns
