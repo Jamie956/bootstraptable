@@ -1,12 +1,14 @@
-### bootstrapTable 的配置
+## bootstrapTable 配置
 
 ```
-表头
 columns
-表格数据
-data
-表格风格
-classes
+  field
+  title
+  formatter //处理columns
+  sortable: 'true',//是否可搜索
+  visible: true,//是否可见
+data //数据
+classes: 'table table-no-bordered'
 showRefresh: true,//是否显示 刷新按钮
 toolbar: "#toolbar",
 showToggle: "true",//是否显示 切换试图
@@ -18,16 +20,6 @@ search: "true",//是否支持搜索
 pageList: "[5, 10, 20, 50, 100, 200]",//页面数据条数
 url:"/examples/bootstrap_table/data",//请求数据
 sidePagination: "server",//server or client 分页
-onClickRow: function (row) {}　//单机一行的回调函数
+onClickRow: function (row) {}　//单击一行的回调函数
 ```
 
-### columns
-
-```
-field
-title
-格式化单元格内容
-formatter
-sortable: 'true',//是否可搜索
-visible: true,//是否可见
-```

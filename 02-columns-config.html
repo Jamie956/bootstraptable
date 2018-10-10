@@ -10,21 +10,9 @@
 </div>
 
 <script>
-    //抽取元素
-    var $table = $('#table');
-    var data = [{
-        id: 1,
-        name: 'Item 1',
-        price: '$1'
-    }, {
-        id: 2,
-        name: 'Item 2',
-        price: '$2'
-    }];
     var columns = [{
         field: 'id',
         title: 'Item ID',
-        //格式化单元格内容
         formatter: function (value, row) {
             return 'ID: ' + value;
         }
@@ -36,10 +24,20 @@
         title: 'Item Price',
         sortable: 'true',//是否可搜索
         visible: true,//是否可见
-    }]
-    $table.bootstrapTable({
+    }];
+
+    var data = [{
+        id: 1,
+        name: 'Item 1',
+        price: '$1'
+    }, {
+        id: 2,
+        name: 'Item 2',
+        price: '$2'
+    }];
+
+    $('#table').bootstrapTable({
         columns: columns,
         data: data,
-        // classes: 'table table-no-bordered',//表格风格
     });
 </script>
