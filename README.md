@@ -93,6 +93,42 @@ $('#page').change(function (e) {
   }
 }
 ```
+### change
+```js
+//input
+{
+  field: 'statte',
+  title: 'Statte',
+  formatter: function (value, row, index) {
+    return `<input type="text" class="option"/>`;
+  },
+  events: {
+    "change .option": function (e, value, row, index) {
+      alert('change');
+    }
+  }
+}
+//select
+{
+  field: 'statte',
+  title: 'Statte',
+  formatter: function (value, row, index) {
+    return `
+      <select class="option">
+        <option value ="volvo">Volvo</option>
+        <option value ="saab">Saab</option>
+        <option value="opel">Opel</option>
+        <option value="audi">Audi</option>
+      </select>
+    `;
+  },
+  events: {
+    "change .option": function (e, value, row, index) {
+      alert('change');
+    }
+  }
+}
+```
 
 
 
