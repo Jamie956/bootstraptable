@@ -51,7 +51,10 @@ $('#table').bootstrapTable({
 $table.bootstrapTable('refresh');//刷新table
 ```
 
+
+
 ## Example
+
 ### checkbox & formatter
 ```js
 {
@@ -69,8 +72,27 @@ $table.bootstrapTable('refresh');//刷新table
   }
 }
 ```
-
-
+### page
+```js
+$('#page').change(function (e) {
+  $table.bootstrapTable('selectPage', parseInt($(this).val()));
+});
+```
+### click
+```js
+{
+  field: 'statte',
+  title: 'Statte',
+  formatter: function (value, row, index) {
+    return `<a class="option">click</a>`;
+  },
+  events: {
+    "click .option": function (e, value, row, index) {
+      alert('click');
+    }
+  }
+}
+```
 
 
 
